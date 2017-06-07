@@ -121,8 +121,8 @@
                                         <th class="text-center"><input type="checkbox" id="select_all" onclick="check_all('asset_form')"></th>
                                         <th class="text-center"> IP </th>
                                         <th class="text-center"> 主机名 </th>
-                                        <th class="text-center"> IDC </th>
-                                        <th class="text-center"> 资产编号 </th>
+{#                                        <th class="text-center"> IDC </th>#}
+{#                                        <th class="text-center"> 资产编号 </th>#}
 {#                                        <th class="text-center"> 品牌 </th>#}
                                         <th class="text-center"> 配置 </th>
                                         <th class="text-center"> 项目 </th>
@@ -144,9 +144,9 @@
                                             {% endif %}
 {#                                            <td class="text-center"> <a href="/assets/host_detail/?uuid={{ i.uuid }}" class="select_node" ><i class="fa fa-linux" style="color:#080506"></i> {{ i.eth1 }} </a></td>#}
                                             <td class="text-center"> {{ i.node_name }} </td>
-                                            <td class="text-center"> {{ i.idc.name }} </td>
-                                            <td class="text-center"> {{ i.number }} </td>
-                                            <td class="text-center"> {{ i.brand }} </td>
+{#                                            <td class="text-center"> {{ i.idc.name }} </td>#}
+{#                                            <td class="text-center"> {{ i.number }} </td>#}
+{#                                            <td class="text-center"> {{ i.brand }} </td>#}
                                             <td class="text-center"> {{ i.cpu }} <span class="text-success">|</span> {{ i.memory }} <span class="text-success">|</span> {{ i.hard_disk }}</td>
                                             <td class="text-center">
                                                 {% for s in i.uuid|business_list %}

@@ -66,7 +66,7 @@ class department_from(forms.ModelForm):
         model = department_Mode
         fields = "__all__"
 
-class useredit_from(forms.ModelForm):
+class useredit_form(forms.ModelForm):
 
     class Meta:
         model = CustomUser
@@ -82,10 +82,11 @@ def user_edit(request, id):
 
     data = CustomUser.objects.get(id=id)
     data_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+    print(data_time)
     if request.method == 'POST':
         # if request.POST.getlist("password1") == request.POST.getlist("password2"):
-        uf = useredit_from(request.POST, instance=data)
-        # print uf
+        uf = useredit_form(request.POST, instance=data)
+        print uf
         if uf.is_valid():
             # zw = uf.save(commit=False)
             # zw.last_login = data_time
@@ -95,10 +96,10 @@ def user_edit(request, id):
             uf.save()
             return HttpResponseRedirect("/accounts/user_list/")
     else:
-        uf = useredit_from(instance=data)
+        uf = useredit_form(instance=data)
         return render_to_response('user/user_edit.html', locals(), context_instance=RequestContext(request))
 
-class userupdate_from(forms.ModelForm):
+class userupdate_form(forms.ModelForm):
     # password1 =  models.CharField(max_length=64, verbose_name=u'确认密码')
 
     class Meta:
@@ -111,11 +112,11 @@ def user_update(request):
     data = CustomUser.objects.get(username=request.user.username)
     data_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
     if request.method == 'POST':
-        uf = userupdate_from(request.POST, instance=data)
+        uf = userupdate_form(request.POST, instance=data)
         if uf.is_valid():
             uf.save()
             return HttpResponseRedirect("/accounts/user_list/")
     else:
-        uf = userupdate_from(instance=data)
+        uf = userupdate_form(instance=data)
         return render_to_response('user/user_edit.html', locals(), context_instance=RequestContext(request))
 
