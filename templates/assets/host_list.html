@@ -11,7 +11,8 @@
         <div class="ibox float-e-margins">
             <div id="edit_result">
                 <div class="ibox-title">
-                    <h5> 主机详细信息列表 <span style="color:red">总共有:{{server_list_count}}台  真实机:{{ physics }}  虚拟机: {{ vms }}台</span></h5>
+{#                    <h5> 主机详细信息列表 <span style="color:red">总共有:{{server_list_count}}台  真实机:{{ physics }}  虚拟机: {{ vms }}台</span></h5>#}
+                    <h5> 主机详细信息列表 <span style="color:red">总共有:{{server_list_count}}台</span></h5>
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>
@@ -28,16 +29,16 @@
                 <div class="ibox-content">
                     <form id="asset_form">
 {#                        {% csrf_token %}#}
-                        <div class="col-sm-1 test_width" style="padding-left: 0px">
-                            <label>
-                                <select name="change_idc" class="form-control m-b" onchange="change_info()">
-                                    <option value="">所有机房</option>
-                                    {% for i in idcs %}
-                                        <option value="{{i.name}}"> {{ i }}</option>
-                                    {% endfor %}
-                                </select>
-                            </label>
-                        </div>
+{#                        <div class="col-sm-1 test_width" style="padding-left: 0px">#}
+{#                            <label>#}
+{#                                <select name="change_idc" class="form-control m-b" onchange="change_info()">#}
+{#                                    <option value="">所有机房</option>#}
+{#                                    {% for i in idcs %}#}
+{#                                        <option value="{{i.name}}"> {{ i }}</option>#}
+{#                                    {% endfor %}#}
+{#                                </select>#}
+{#                            </label>#}
+{#                        </div>#}
                         <div class="col-sm-1 test_width">
                             <label>
                                 <select name="change_business" class="form-control m-b" onchange="change_info()">
@@ -68,25 +69,25 @@
                                  </select>
                              </label>
                          </div>
-                        <div class="col-sm-1 test_width">
-                            <label>
-                                <select name="change_brand" class="form-control m-b" onchange="change_info()">
-                                    <option value="">所有型号</option>
-                                    {% for i in brands %}
-                                    <option value="{{ i.0 }}"> {{ i.1 }}</option>
-                                    {% endfor %}
-                                </select>
-                            </label>
-                        </div>
-                        <div class="col-sm-1 test_width">
-                            <label>
-                                <select name="change_type" class="form-control m-b" onchange="change_info()">
-                                    <option value="">所有类型</option>
-                                    <option value="1">物理机</option>
-                                    <option value="0">虚拟机</option>
-                                </select>
-                            </label>
-                        </div>
+{#                        <div class="col-sm-1 test_width">#}
+{#                            <label>#}
+{#                                <select name="change_brand" class="form-control m-b" onchange="change_info()">#}
+{#                                    <option value="">所有型号</option>#}
+{#                                    {% for i in brands %}#}
+{#                                    <option value="{{ i.0 }}"> {{ i.1 }}</option>#}
+{#                                    {% endfor %}#}
+{#                                </select>#}
+{#                            </label>#}
+{#                        </div>#}
+{#                        <div class="col-sm-1 test_width">#}
+{#                            <label>#}
+{#                                <select name="change_type" class="form-control m-b" onchange="change_info()">#}
+{#                                    <option value="">所有类型</option>#}
+{#                                    <option value="1">物理机</option>#}
+{#                                    <option value="0">虚拟机</option>#}
+{#                                </select>#}
+{#                            </label>#}
+{#                        </div>#}
                         <div class="col-sm-3">
                             <div class="input-group">
                                 <input type="text" class="form-control m-b" id="search_input" name="keyword" placeholder="Search">
@@ -122,7 +123,7 @@
                                         <th class="text-center"> 主机名 </th>
                                         <th class="text-center"> IDC </th>
                                         <th class="text-center"> 资产编号 </th>
-                                        <th class="text-center"> 品牌 </th>
+{#                                        <th class="text-center"> 品牌 </th>#}
                                         <th class="text-center"> 配置 </th>
                                         <th class="text-center"> 项目 </th>
                                         <th class="text-center"> 服务 </th>

@@ -12,7 +12,7 @@ doc/cmdb.sql
 插入数据：
 INSERT INTO `users_department_mode` VALUES (1,'运维部','',1001);
 
-insert into `users_customuser` (`id`, `password`, `last_login`, `is_superuser`, `email`, `username`, `first_name`, `last_name`, `department_id`, `mobile`, `session_key`, `user_key`, `menu_status`, `user_active`, `uuid`, `is_staff`, `is_active`, `date_joined`) values('1','pbkdf2_sha256$15000$uM1f5HMxHOqE$zPzKtNJMheQe62Q592V5l0m60nq/5Vj4rgzlVf5nXYs=','2016-08-04 14:12:56','1','voilet@qq.com','admin','','',NULL,'','ff3a3s4vj7ivjl7km1teqhxrizwbdrek',NULL,'1','0','3eceb1e9-df90-38ed-9960-03183bc85cce','0','1','2015-12-29 14:05:50');
+
 
 4、修改配置文件mysite/settings.py：（这里可以以后修改）
 EMAIL_HOST = 'mail.qq.com'
@@ -44,10 +44,9 @@ zabbix_passwd = 'zabbix'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        # 'NAME': 'voilet_cmdb_v1',  # Or path to database file if using sqlite3.
         'NAME': 'cmdb_v2',  # Or path to database file if using sqlite3.
-         'USER': 'root',
-         'PASSWORD': '123456',  # Not used with sqlite3.
+        'USER': 'root',
+        'PASSWORD': '123456',  # Not used with sqlite3.
         'HOST': '127.0.0.1',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '3306',  # Set to empty string for default. Not used with sqlite3.
         "OPTIONS": {
@@ -97,7 +96,7 @@ server {
 service nginx reload
 /etc/init.d/uwsgi start
 打开网页访问
-默认账号密码admin: Admin_147258
+默认账号密码admin: admin123
 8丶登陆之后：咖啡大神叮嘱：
 先创建产品线，然后在创建项目，在建机房
 然后添加服务

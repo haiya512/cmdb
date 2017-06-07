@@ -29,8 +29,3 @@ class UserCreateForm(forms.ModelForm):
     class Meta:
         model = CustomUser
         fields = ('username', 'first_name', 'email', 'department', 'mobile', "user_key")
-
-
-
-
-
