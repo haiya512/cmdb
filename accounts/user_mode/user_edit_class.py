@@ -12,17 +12,16 @@
 #=============================================================================
 from django.template import RequestContext
 from django.shortcuts import render_to_response
-from django.contrib.auth.decorators import login_required
-from accounts.models import UserCreateForm
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.contrib.auth.hashers import make_password
 from django.core.context_processors import csrf
 from django.views.decorators.csrf import csrf_protect
 from accounts.models import *
 from users.models import department_Mode
-import time,json
+import time
 from django.contrib.auth.decorators import login_required
 from cmdb_auth.no_auth import check_auth
+from django.forms import ModelForm
 
 
 
@@ -41,7 +40,6 @@ def user_id(request, id):
         if request.POST.getlist("password1") == request.POST.getlist("password2"):
             uf = edit_user_from(request.POST)
             if uf.is_valid():
-                # print "is ok"
                 zw = uf.save(commit=False)
                 zw.last_login = data_time
                 zw.date_joined = data_time
@@ -51,8 +49,7 @@ def user_id(request, id):
                 content["user_list"] = voilet_list
                 content.update(csrf(request))
                 return render_to_response('user/user_edit.html', content, context_instance=RequestContext(request))
-            # else:
-            #     print "is over"
+
     else:
         content["data_time"] = data_time
         content["user_list"] = voilet_list
@@ -61,16 +58,20 @@ def user_id(request, id):
         content.update(csrf(request))
         return render_to_response('user/user_page.html', content, context_instance=RequestContext(request))
 
-class department_from(forms.ModelForm):
+class department_form(forms.ModelForm):
     class Meta:
         model = department_Mode
         fields = "__all__"
 
-class useredit_form(forms.ModelForm):
+
+class useredit_form(ModelForm):
+
 
     class Meta:
         model = CustomUser
         fields = ["first_name", "email", "mobile", "department", "user_key"]
+    mobile = forms.CharField(label=u'手机', widget=forms.TextInput(attrs={'size':'11'}),
+                             required=True)
 
 
 @login_required

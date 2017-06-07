@@ -26,7 +26,7 @@
                             {% endif %}
                             {% if request.user.is_superuser or request.session.fun_auth.bat_add_host %}
                                 <li class="host_add_batch"><a href="/assets/host_add_batch/" >批量添加主机</a></li>
-{#                                <li class="ip_list"><a href="/assets/ip_list/" >IP列表</a></li>#}
+                                <li class="ip_list"><a href="/assets/ip_list/" >IP列表</a></li>
                                 <li class="zabbix"><a href="/assets/zabbix/" >zabbix信息</a></li>
                             {% endif %}
                         </ul>
@@ -81,10 +81,12 @@
             </li>
             {% if request.user.username %}
             <li class="swan auto">
-                <a href="###"><i class="fa fa-cube"></i> <span class="nav-label">自动化运维</span><span class="fa arrow"></span></a>
+                <a href="###"><i class="fa fa-cube"></i> <span class="nav-label">Saltstack</span><span class="fa
+                arrow"></span></a>
                 <ul class="nav nav-second-level">
-
-                    <li><a href="/swan/apply/{{ request.user.uuid }}/">发布申请</a></li>
+{#                    <li><a href="/swan/apply/{{ request.user.uuid }}/">发布申请</a></li>#}
+                    <li><a href="/swan/apply/{{ request.user.uuid }}/">发布代码</a></li>
+                    <li><a href="/swan/apply/{{ request.user.uuid }}/">执行命令</a></li>
                 </ul>
             </li>
 
