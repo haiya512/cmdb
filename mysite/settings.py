@@ -33,6 +33,8 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1"]
 
+pxe_url_api = ''
+
 # Application definition
 
 INSTALLED_APPS = (

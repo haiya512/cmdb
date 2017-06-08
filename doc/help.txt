@@ -1,16 +1,16 @@
-需要python2.7环境
-git clone  https://github.com/voilet/cmdb
-mv cmdb /data
-cd  /data/cmdb
-pip install -r requirements.txt --index https://pypi.mirrors.ustc.edu.cn/simple/  
-可能有些没有安装数据库组建的需要
-pip install MySQL-python
+1. 部署
+    python2.7
+    git clone  https://github.com/voilet/cmdb
+    mv cmdb /data
+    cd  /data/cmdb
+    pip install -r requirements.txt --index https://pypi.mirrors.ustc.edu.cn/simple/
+
 2、建立mysql 数据库并且授权账号登录：
-	Ø create database cmdb_v2 default charset=utf8;
+	create database cmdb_v2 default charset=utf8;
 3丶导入数据库表文件：
-doc/cmdb.sql
-插入数据：
-INSERT INTO `users_department_mode` VALUES (1,'运维部','',1001);
+    doc/cmdb.sql
+    插入数据：
+    INSERT INTO `users_department_mode` VALUES (1,'运维部','',1001);
 
 
 
@@ -96,7 +96,7 @@ server {
 service nginx reload
 /etc/init.d/uwsgi start
 打开网页访问
-默认账号密码admin: admin123
+默认账号密码admin: Admin_147258
 8丶登陆之后：咖啡大神叮嘱：
 先创建产品线，然后在创建项目，在建机房
 然后添加服务

@@ -17,6 +17,8 @@ from salt_ui.api.salt_token_id import *
 from salt_ui.api.salt_https_api import salt_api_jobs
 from mysite.settings import salt_api_pass, salt_api_user, salt_api_url, pxe_url_api, auth_content, app_key, app_name, \
     auth_url, auth_key
+# from mysite.settings import salt_api_pass, salt_api_user, salt_api_url, pxe_url_api, auth_content, app_key, app_name, auth_url, auth_key
+
 from assets.models import Host
 import hashlib, time
 # 日志记录

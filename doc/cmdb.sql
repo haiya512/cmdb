@@ -1314,7 +1314,7 @@ CREATE TABLE `users_customuser` (
 
 LOCK TABLES `users_customuser` WRITE;
 /*!40000 ALTER TABLE `users_customuser` DISABLE KEYS */;
-INSERT INTO `users_customuser` VALUES (1,'pbkdf2_sha256$15000$QB5LTIl6eIf9$jjaVteipcNOHk5Kx7bdK7xZVb9r3/FergltFteUq6+I=','2016-08-04 18:17:40',1,'voilet@qq.com','admin','1','1','','02ztex1eu4g0c0c0gekbv8ov6nryjmf0',NULL,1,0,'',1,1,'2016-08-04 18:15:57',NULL);
+INSERT INTO `users_customuser` VALUES (1,'pbkdf2_sha256$15000$QB5LTIl6eIf9$jjaVteipcNOHk5Kx7bdK7xZVb9r3/FergltFteUq6+I=','2016-08-04 18:17:40',1,'voilet@qq.com','admin','管理员','管理员','','02ztex1eu4g0c0c0gekbv8ov6nryjmf0',NULL,1,0,'',1,1,'2016-08-04 18:15:57',NULL);
 /*!40000 ALTER TABLE `users_customuser` ENABLE KEYS */;
 UNLOCK TABLES;
 
