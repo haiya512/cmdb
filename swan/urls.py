@@ -1,13 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# =============================================================================
-#     FileName: urls.py
-#         Desc: 2015-15/1/5:下午1:20
-#       Author: 苦咖啡
-#        Email: voilet@qq.com
-#     HomePage: http://blog.kukafei520.net
-#      History: 
-# =============================================================================
+
 
 from django.conf.urls import patterns, url
 
