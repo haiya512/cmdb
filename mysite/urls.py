@@ -30,10 +30,12 @@ urlpatterns = patterns('',
                        # 资产管理
                        url(r'assets/', include("assets.urls")),
 
-                       # 运维自动化/
+                       # 运维自动化
                        url(r'auto/', include("salt_ui.auto.urls")),
+
                        # Saltstack
-                       url(r'auto/', include("salt_ui.auto.urls")),
+                       url(r'saltauto/', include("salt_ui.urls")),
+
                        # 资产api
                        url(r'api/', include("api.urls")),
                        url(r'conf/', include("config.urls")),

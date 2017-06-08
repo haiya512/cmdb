@@ -109,7 +109,7 @@ def button_cmd_run(request):
     return render(request, 'autoinstall/cmd_run.html', locals())
 
 
-# @login_required
+@login_required
 @csrf_protect
 def cmd_run(request):
     if request.method == 'POST':
