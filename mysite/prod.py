@@ -35,7 +35,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': 'centos',
         # 'PASSWORD': 'Ubp-ndv7tNphiwut5ora',
-        'HOST': '192.168.1.102',
+        'HOST': '192.168.0.43',
         'PORT': '3306',
         "OPTIONS": {
             "init_command": "SET foreign_key_checks = 0;",

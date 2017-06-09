@@ -33,6 +33,7 @@ urlpatterns = patterns('',
    # 自动化运维首页
    url(r'^$', salt_ui.auto.auto_index_class.auto_index),
    url(r'^salt_cmd/$', "salt_ui.auto.cmd.cmd_run", name="cmd_run"),
+   url(r'^minions_shell_result/$', "salt_ui.auto.cmd.shell_result", name="shell_result"),
    url(r'^button_cmd_run/$', button_cmd_run, name="button_cmd_run"),
    url(r'^highstate/$', salt_highstate, name="highstate"),
    url(r'^redis/$', handle_redis, name="handle_redis"),

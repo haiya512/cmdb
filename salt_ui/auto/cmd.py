@@ -18,7 +18,7 @@ from utils.redis_help import *
 
 from accounts.utils import jmmail
 
-import yaml
+# import yaml
 from config.security import hacker_select
 
 
@@ -160,8 +160,34 @@ def cmd_run(request):
             return render_to_response('autoinstall/cmd_run.html',
                                       locals(), context_instance=RequestContext(request))
         else:
+            a = ''
             return render_to_response('autoinstall/cmd_run_status.html',
                                       locals(), context_instance=RequestContext(request))
+    else:
+        return render_to_response('autoinstall/cmd_run.html',
+                                      locals(), context_instance=RequestContext(request))
+
+
+def shell_result(request):
+    """
+    如果要通过API去跑命令，就需要nodegroups.conf里面配置的是节点名，而不是主机IP
+    """
+    # sapi = SaltAPI()
+    if request.POST:
+        cmd = request.POST.get("cmd").strip()
+        line = "#############################################################"
+        host_list = request.POST.getlist("hosts_name")
+        host_str = ",".join(host_list)
+        print host_str
+        print cmd
+        # result = sapi.shell_remote_execution(host_str, cmd)
+        result = ''
+        print result
+        return render(request,
+                      'autoinstall/minions_shell_result.html',
+                      {'result': result, 'cmd': cmd, 'line': line}
+                      )
+    return render(request, 'autoinstall/minions_shell_result.html')
 
 
 def handle_redis(request):

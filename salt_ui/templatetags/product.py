@@ -1,15 +1,6 @@
 # !/usr/bin/env python
 #-*- coding: utf-8 -*-
-#=============================================================================
-#     FileName: product.py
-#         Desc:
-#       Author: 苦咖啡
-#        Email: voilet@qq.com
-#     HomePage: http://blog.kukafei520.net
-#      Version: 0.0.1
-#   LastChange: 2014-06-15
-#      History: 
-#=============================================================================
+
 from datetime import datetime
 
 from django.shortcuts import render_to_response, HttpResponseRedirect
